@@ -7,6 +7,16 @@ Windows 11 collection of Fixes
 
 * ``OOBE\BYPASSNRO``
 
+# New method added
+
+* Shift+F10
+
+* WinJS.Application.restart("ms-cxh://LOCALONLY")
+
+# or
+
+* "start ms-cxh:localonly"
+
 # 2. Disable Bitlocker:
 
 Shift + F10
