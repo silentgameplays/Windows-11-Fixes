@@ -11,11 +11,11 @@ Windows 11 collection of Fixes
 
 * Shift+F10
 
-* WinJS.Application.restart("ms-cxh://LOCALONLY")
+* ``WinJS.Application.restart("ms-cxh://LOCALONLY")``
 
 # or
 
-* "start ms-cxh:localonly"
+* ``"start ms-cxh:localonly"``
 
 # 2. Disable Bitlocker:
 
