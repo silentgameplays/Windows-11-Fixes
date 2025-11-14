@@ -60,7 +60,7 @@ Windows will finalize the setup automatically using the local account you just c
 
 # 2. Disable Bitlocker:
 
-Shift + F10
+* Shift + F10
 
 * ``regedit``
 
