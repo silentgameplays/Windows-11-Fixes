@@ -2,20 +2,61 @@
 Windows 11 collection of Fixes
 
 # 1. To enable a local account:
+* During Windows 11 25H2 Setup wait for the “Sign in with Microsoft” screen.
 
-* Shift+F10
+* Shift + F10
 
-* ``OOBE\BYPASSNRO``
+**Type the following command (replace username with your desired name):**
 
-# New method added
+* ``net user "username" * /add``
 
-* Shift+F10
+* Press Enter. You’ll be prompted to set a password — or you can leave it blank and just press Enter twice.
+* Expected result: ``“The command completed successfully.”``
 
-* ``WinJS.Application.restart("ms-cxh://LOCALONLY")``
+* Add the User to the Administrators Group
 
-# or
+* ``net localgroup administrators "username" /add``
 
-* ``"start ms-cxh:localonly"``
+* Enable your newly created account:
+
+* ``net user "username" /active:yes``
+
+**Disable passsword expiration:**
+
+* ``net user "username" /expires:never``
+
+**(Optional) Disable the Built-in Administrator Account**
+
+* ``net user "Administrator" /active:no``
+
+**Remove the Default Temporary User Created By Windows Install Process**
+
+* ``net user "defaultuser0" /delete``
+
+**Clean the Registry**
+
+* ``regedit``
+
+* Find ``HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE``
+
+* Delete these three values:
+
+* ``DefaultAccountAction``
+
+* ``DefaultAccountName``
+
+* ``DefaultAccountSID``
+
+**Find the key called** ``LaunchUserOOBE``
+
+* Rename it to ``SkipMachineOOBE`` set it's value from 0 to 1.
+
+**This tells Windows setup to skip the remaining online account steps and go straight to the desktop.**
+
+* Reboot from cmd
+* ``shutdown /r /t 0``
+Windows will finalize the setup automatically using the local account you just created.
+
 
 # 2. Disable Bitlocker:
 
@@ -169,6 +210,9 @@ Then:
 
 * Reboot. Check the ``eventviewer`` for errors again.
 
+**Check for updates on Secure Boot/TPM Issues here.**
+
+https://support.microsoft.com/en-us/topic/registry-key-updates-for-secure-boot-windows-devices-with-it-managed-updates-a7be69c9-4634-42e1-9ca1-df06f43f360d#bkmk_registry_keys
 
 # Enjoy and no need for third party scripts.
 silentgameplays.
