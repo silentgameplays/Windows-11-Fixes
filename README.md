@@ -155,5 +155,15 @@ Directplay:
 
 * ``DISM /Online /Cleanup-Image /RestoreHealth``
 
+# 17. Fix the "Secure Boot CA/keys need to be updated" Event 1801 error in event log:
+In Windows Powershell as Admin run
+* ``reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Secureboot /v AvailableUpdates /t REG_DWORD /d 0x5944 /f``
+Then:
+* ``Start-ScheduledTask -TaskName "\Microsoft\Windows\PI\Secure-Boot-Update"``
+* Wait for some time 3-5 minutes.
+* Go into ``regedit`` and find ``Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecureBoot\Servicing`` the vlaue of ``UEFICA2023Status`` should say ``Updated`` instead of ``In Progress``
+* Reboot. Check the ``eventviewer`` for errors again.
+
+
 # Enjoy and no need for third party scripts.
 silentgameplays.
