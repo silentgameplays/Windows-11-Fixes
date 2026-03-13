@@ -218,13 +218,34 @@ Then:
 
 https://support.microsoft.com/en-us/topic/registry-key-updates-for-secure-boot-windows-devices-with-it-managed-updates-a7be69c9-4634-42e1-9ca1-df06f43f360d#bkmk_registry_keys
 
-**Using nslookup to discover fun things -a stands for all ports -b filters by processes running**
+**Using nslookup,netstat,ipconfig and tracert with ping to discover fun things -a stands for all ports -b filters by processes running**
 
 * ``nslookup -a`` 
 * ``nslookup -b``
+*  ``nslookup -a``
+* ``netstat -an``
+* ``netstat -b``
+* ``netstat -n 5``
+* ``netstat -n``
+* ``netstat -f``
+* ``tracert microsoft.com``
+* ``ping microsoft.com``
 
+**Flush DNS configuration and check ipconfig**
+* ``ipconfig``
+* ``ipconfig /flushdns``
+* ``ipconfig /release``
+* ``ipconfig /renew``
+* ``ipconfig /all``
+**Same thing with netsh**
+*  ``netsh int ip reset``
+ 
+**Clear route tables**
+* ``route /f``
+  
 **Using whois tool on Windows to lookup who the sources from previous commands belong to**
 * Download whois for Windows here https://learn.microsoft.com/en-us/sysinternals/downloads/whois
 * ``whois microsoft.com``
+
 # Enjoy and no need for third party scripts.
 silentgameplays.
