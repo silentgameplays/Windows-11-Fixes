@@ -132,6 +132,10 @@ Directplay:
 
 * ``DISM /Online /Enable-Feature /FeatureName:DirectPlay /All``
 
+**NB! On current unreleased Windows 26H2 and all future Windows 11 builds NET 3.5 is available as a separate download until 2029:**
+
+https://www.microsoft.com/en-us/download/details.aspx?id=21
+
 # 9. Installing chocolatey package manager via powershell in case winget fails to install what you need:
 
 * ``Set-ExecutionPolicy Bypass -Scope Process -Force;[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;iex((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))``
