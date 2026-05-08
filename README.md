@@ -1,6 +1,15 @@
 # Windows-11-Fixes
 Windows 11 collection of Fixes
 
+# How To Get An Enterprise Windows build for installation with Windows Media Creation Tool
+
+* Download the Windows Media Creation Tool to your Downloads Folder
+* https://www.microsoft.com/en-us/software-download/windows11
+* Run PowerShell As Admin on Windows and run this command:
+* ``.\MediaCreationTool.exe /Eula Accept /Retail /MediaArch x64 /MediaLangCode en-US /MediaEdition Enterprise``
+* Enter Enterprise or generic Enterprise key
+* Select ISO or USB Option and wait
+
 # 1. To enable a local account:
 * During Windows 11 25H2 Setup wait for the “Sign in with Microsoft” screen.
 
