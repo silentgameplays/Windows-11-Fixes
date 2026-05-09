@@ -248,7 +248,16 @@ https://support.microsoft.com/en-us/topic/registry-key-updates-for-secure-boot-w
 * ``ipconfig /all``
 **Same thing with netsh**
 *  ``netsh int ip reset``
- 
+**Additional commands for network troubleshooting**
+* ``netsh int tcp set heuristics disabled``
+* ``netsh int tcp set global autotuninglevel=disabled``
+* ``netsh int tcp set global rss=enabled``
+* ``netsh winsock reset``
+**Show autotuning status**
+* ``netsh interface tcp show global``
+**If it says “Receive Window Auto-Tuning Level” Disabled, re-enable it**
+* ``netsh int tcp set global autotuninglevel=normal ``
+
 **Clear route tables**
 * ``route /f``
   
